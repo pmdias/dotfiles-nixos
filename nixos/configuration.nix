@@ -4,6 +4,15 @@
 
 { config, pkgs, ... }:
 
+let
+  nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
+    export __NV_PRIME_RENDER_OFFLOAD=1
+    export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
+    export __GLX_VENDOR_LIBRARY_NAME=nvidia
+    export __VK_LAYER_NV_optimus=NVIDIA_only
+    exec "$@"
+  '';
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -53,6 +62,9 @@
     # Configure keymap in X11
     layout = "pt,fr";
 
+    # NVIDIA drivers
+    videoDrivers = [ "nvidia" ];
+
     displayManager.lightdm = {
       enable = true;
     };
@@ -62,6 +74,17 @@
       luaModules = with pkgs.luaPackages; [
         luarocks
       ];
+    };
+  };
+
+  hardware.opengl.enable = true;
+  hardware.nvidia = {
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    modesetting.enable = true;
+    prime = {
+      offload.enable = true;
+      intelBusId = "PCI:0:2:0";
+      nvidiaBusId = "PCI:1:0:0";
     };
   };
 
@@ -91,9 +114,11 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  # environment.systemPackages = with pkgs; [
-  #   firefox
-  # ];
+  environment.systemPackages = with pkgs; [
+    glxinfo
+    nvidia-offload
+    pciutils
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
