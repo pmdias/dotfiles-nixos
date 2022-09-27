@@ -25,6 +25,8 @@ better understand how NixOS and Nix work:
 - [ ] Configure [neovim](https://github.com/neovim/neovim) to my *basic* needs. By this I mean
       to have `neovim` configured but probably without plugins at this stage. I will be using
       this step as an excuse to do some maintenance and tyding of my current `init.lua`;
+- [ ] Configure Firefox - apparently it is possible to manage Firefox using either Nix or
+      `home-manager`?;
 - [ ] Setup SSH as much as possible: declarative keys (is it possible?), setup the SSH
       authentication agent;
 - [ ] Setup GPG as much as possible: similar to the SSH step above;
