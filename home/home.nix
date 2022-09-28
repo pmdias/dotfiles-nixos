@@ -4,10 +4,12 @@
   # Import modules that manage individual applications that should
   # be managed through home-manager
   imports = [
+    ./bash
     ./direnv
     ./git
     ./kitty
     ./nvim
+    ./session
   ];
 
   # Home Manager needs a bit of information about you and the
@@ -27,17 +29,4 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  # Session variables
-  home.sessionVariables = {
-    EDITOR = "vim";
-  };
-
-  programs.bash = {
-    enable = true;
-
-    shellAliases = {
-      ll = "ls -lh --color=auto";
-    };
-  };
 }
