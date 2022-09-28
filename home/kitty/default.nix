@@ -1,9 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, stdenv, ... }:
 {
   programs.kitty = {
     enable = true;
-    settings = {
-      font_size = 9;
-    };
+    extraConfig = builtins.readFile ./kitty.conf;
   };
 }
