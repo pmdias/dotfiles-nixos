@@ -1,6 +1,15 @@
 { config, pkgs, ... }:
 
 {
+  # Import modules that manage individual applications that should
+  # be managed through home-manager
+  imports = [
+    ./direnv
+    ./git
+    ./kitty
+    ./nvim
+  ];
+
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "pedro";
@@ -22,29 +31,6 @@
   # Session variables
   home.sessionVariables = {
     EDITOR = "vim";
-  };
-
-  programs.kitty = {
-    enable = true;
-  };
-
-  programs.neovim = {
-    enable = true;
-    viAlias = true;
-    vimAlias = true;
-    vimdiffAlias = true;
-  };
-
-  programs.git = {
-    enable = true;
-    userEmail = "pedrodias.miguel@gmail.com";
-    userName = "Pedro Dias";
-  };
-
-  programs.direnv = {
-    enable = true;
-    enableBashIntegration = true;
-    nix-direnv.enable = true;
   };
 
   programs.bash = {
