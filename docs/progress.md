@@ -16,7 +16,7 @@ better understand how NixOS and Nix work:
 - [x] Provide a system configuration in a functional state that allows me to boot
       into the machine and fool around;
 - [x] Initial `home-manager` configuration with just the basic tools;
-- [ ] Configure `i3` to match my usual workflow;
+- [x] Configure `i3` to match my usual workflow;
 - [ ] Configure a status bar (probably `i3bar`) with basic useful information;
 - [ ] Configure a notification system ([dunst](https://github.com/dunst-project/dunst)) that is
       just working;
