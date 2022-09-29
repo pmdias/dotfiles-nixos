@@ -72,9 +72,9 @@ in
           manage = "window";
           name = "xsession";
           start = ''
-	        ${pkgs.runtimeShell} $HOME/.xsession &
-	        waitPID=$!
-	      '';
+            ${pkgs.runtimeShell} $HOME/.xsession &
+            waitPID=$!
+          '';
         }
       ];
     };
@@ -121,6 +121,10 @@ in
     glxinfo
     nvidia-offload
     pciutils
+  ];
+
+  fonts.fonts = with pkgs; [
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
