@@ -29,4 +29,17 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  # Window manager configuration
+  xsession = {
+    enable = true;
+
+    windowManager.i3 = {
+      enable = true;
+      package = pkgs.i3-gaps;
+      config = {
+        window.titlebar = false;
+      };
+    };
+  };
 }

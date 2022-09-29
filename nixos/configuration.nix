@@ -65,14 +65,19 @@ in
     # NVIDIA drivers
     videoDrivers = [ "nvidia" ];
 
-    displayManager.lightdm = {
-      enable = true;
-    };
-
-    windowManager.awesome = {
-      enable = true;
-      luaModules = with pkgs.luaPackages; [
-        luarocks
+    displayManager = {
+      lightdm = {
+        enable = true;
+      };
+      session = [
+        {
+	  manage = "window";
+	  name = "xsession";
+	  start = ''
+	    ${pkgs.runtimeShell} $HOME/.xsession &
+	    waitPID=$!
+	  '';
+	}
       ];
     };
   };
