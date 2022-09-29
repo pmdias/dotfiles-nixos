@@ -66,18 +66,16 @@ in
     videoDrivers = [ "nvidia" ];
 
     displayManager = {
-      lightdm = {
-        enable = true;
-      };
+      lightdm.enable = true;
       session = [
         {
-	  manage = "window";
-	  name = "xsession";
-	  start = ''
-	    ${pkgs.runtimeShell} $HOME/.xsession &
-	    waitPID=$!
-	  '';
-	}
+          manage = "window";
+          name = "xsession";
+          start = ''
+	        ${pkgs.runtimeShell} $HOME/.xsession &
+	        waitPID=$!
+	      '';
+        }
       ];
     };
   };
