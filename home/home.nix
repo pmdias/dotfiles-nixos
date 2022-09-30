@@ -33,5 +33,11 @@
 
   home.packages = with pkgs; [
     rofi
+    feh
   ];
+
+  xdg.dataFile.wallpaper = {
+    source = ./wallpapers/wallpaper.png;
+    target = "wallpaper.png";
+  };
 }

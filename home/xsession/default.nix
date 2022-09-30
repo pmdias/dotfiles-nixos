@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   xsession = {
@@ -12,6 +12,9 @@
         modifier = "Mod4";
         window.titlebar = false;
       };
+      extraConfig = ''
+        exec --no-startup-id feh --bg-scale ${config.xdg.dataHome}/wallpaper.png
+      '';
     };
   };
 }
