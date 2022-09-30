@@ -32,8 +32,10 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
-    rofi
     feh
+    rofi
+    tig
+    tree
   ];
 
   xdg.dataFile.wallpaper = {
