@@ -20,17 +20,17 @@ better understand how NixOS and Nix work:
 - [ ] Configure a status bar (probably `i3bar`) with basic useful information;
 - [ ] Configure a notification system ([dunst](https://github.com/dunst-project/dunst)) that is
       just working;
-- [ ] Configure [kitty](https://github.com/kovidgoyal/kitty) to my needs. Since I'll be using
+- [x] Configure [kitty](https://github.com/kovidgoyal/kitty) to my needs. Since I'll be using
       `kitty` a lot, I'll try to configure it as much as possible to its final stage here;
 - [ ] Configure [neovim](https://github.com/neovim/neovim) to my *basic* needs. By this I mean
       to have `neovim` configured but probably without plugins at this stage. I will be using
       this step as an excuse to do some maintenance and tyding of my current `init.lua`;
 - [ ] Configure Firefox - apparently it is possible to manage Firefox using either Nix or
       `home-manager`?;
-- [ ] Setup SSH as much as possible: declarative keys (is it possible?), setup the SSH
+- [x] Setup SSH as much as possible: declarative keys (is it possible?), setup the SSH
       authentication agent;
 - [ ] Setup GPG as much as possible: similar to the SSH step above;
-- [ ] Configure the system to use Nvidia drivers;
+- [x] Configure the system to use Nvidia drivers;
 - [ ] Configure proper power management: this is mostly a direct migration of the scripts I
       currently already use, but I'll be attempting to create Nix packages for them;
 - [ ] Configure a screen lock, probably [i3lock](https://github.com/i3/i3lock);
