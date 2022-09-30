@@ -40,4 +40,8 @@
     source = ./wallpapers/wallpaper.png;
     target = "wallpaper.png";
   };
+
+  programs.starship = {
+    enable = true;
+  };
 }
