@@ -1,4 +1,4 @@
-{ pkgs, stdenv, ... }:
+{ pkgs, ... }:
 let
   kittyBaseConfig = builtins.readFile ./kitty.conf;
   colorScheme = import ../themes/tokyonight/colorscheme.nix;
