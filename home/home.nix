@@ -9,6 +9,7 @@
     ./git
     ./kitty
     ./nvim
+    ./polybar
     ./session
     ./xsession
   ];
@@ -32,6 +33,7 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
+    asdf-vm
     feh
     rofi
     tig
