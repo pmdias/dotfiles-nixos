@@ -17,7 +17,7 @@ better understand how NixOS and Nix work:
       into the machine and fool around;
 - [x] Initial `home-manager` configuration with just the basic tools;
 - [x] Configure `i3` to match my usual workflow;
-- [ ] Configure a status bar (probably `i3bar`) with basic useful information;
+- [x] Configure a status bar ~~(probably `i3bar`)~~ ([polybar](https://polybar.github.io/)) with basic useful information;
 - [ ] Configure a notification system ([dunst](https://github.com/dunst-project/dunst)) that is
       just working;
 - [x] Configure [kitty](https://github.com/kovidgoyal/kitty) to my needs. Since I'll be using
