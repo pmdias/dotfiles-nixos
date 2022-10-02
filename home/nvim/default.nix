@@ -16,10 +16,20 @@
 
       # Appearance
       tokyonight-nvim
-
-      # Status line
       lualine-nvim
       nvim-web-devicons
+
+      # Treesitter support
+      (nvim-treesitter.withPlugins (plugins: with plugins; [
+        tree-sitter-bash
+        tree-sitter-c
+        tree-sitter-lua
+        tree-sitter-nix
+      ]))
+
+      # Telescope
+      telescope-fzf-native-nvim
+      telescope-nvim
     ];
 
     # Load the lua configuration

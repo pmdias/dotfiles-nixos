@@ -1,4 +1,7 @@
-local o =  vim.opt
+local o = vim.opt
+local g = vim.g
+
+g.mapleader = ','
 
 -- # ----------------------------------------------------------------
 -- #  Normalize vim defaults
