@@ -34,7 +34,11 @@
 
   home.packages = with pkgs; [
     asdf-vm
+    brave
     feh
+    jq
+    gnumake
+    ripgrep
     rofi
     tig
     tree
